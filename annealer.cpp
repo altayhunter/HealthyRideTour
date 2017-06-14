@@ -1,4 +1,6 @@
 #include "annealer.h"
+#include <random>     // random_device
+#include <cmath>      // exp
 
 using namespace std;
 

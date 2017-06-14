@@ -1,9 +1,7 @@
 #pragma once
-
 #include <string>  // string
 #include <map>     // map
 #include <utility> // pair
-#include <fstream> // ifstream
 
 class CostMap {
 public:

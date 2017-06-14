@@ -1,11 +1,9 @@
 #pragma once
-
 #include "position.h" // Position
 #include "annealer.h" // Annealer
 #include "costmap.h"  // CostMap
 #include <vector>     // vector
 #include <string>     // string
-#include <fstream>    // ifstream
 #include <random>     // mt19937
 
 class Tour {

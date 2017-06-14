@@ -1,5 +1,4 @@
 #pragma once
-
 #include <iostream> // istream, ostream
 
 struct Position {

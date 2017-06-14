@@ -1,7 +1,5 @@
 #pragma once
-
-#include <random>     // default_random_engine
-#include <cmath>      // exp
+#include <random>     // mt19937, uniform_real_distribution
 
 class Annealer {
 public:

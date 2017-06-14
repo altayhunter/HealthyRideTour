@@ -1,6 +1,7 @@
 #include "tour.h"
 #include <algorithm>  // shuffle
 #include <random>     // random_device, uniform_int_distribution
+#include <fstream>    // ifstream
 
 using namespace std;
 

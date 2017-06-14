@@ -1,4 +1,5 @@
 #include "costmap.h"
+#include <fstream>   // ifstream
 
 using namespace std;
 
