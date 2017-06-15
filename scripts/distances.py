@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# Queries Google Maps for every combination of locations and prints the results.
+
 import csv
 import requests
 
@@ -17,7 +19,7 @@ def requestCost(origin, destination):
 					str(element['duration']['value']))
 
 locations = []
-with open('nodes.csv', 'r') as f:
+with open('../data/nodes.csv', 'r') as f:
 	reader = csv.reader(f)
 	for row in reader:
 		locations.append({'id': int(row[0]), 'latitude': float(row[1]), 'longitude': float(row[2])})

@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# Displays a map of the hardcoded tour.
 
 from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
