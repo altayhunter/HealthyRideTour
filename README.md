@@ -33,5 +33,9 @@ Coercing Mathematica to use these values as edge weights was beyond my skills, s
 ![Best Tour](/results/bestTour.png)
 Total travel time is 3 hours 5 minutes 29 seconds, traversing counterclockwise a distance of 26.7 miles.
 
+## First Attempt
+I attempted this tour on 2017-06-17 with the intent of renting a bike at each station and riding it to the next station. Unfortunately on six occasions the app told me the bike was rented, but the bike refused to unlock. This required me to call the service line to have them invalidate the rental and have me rent a different bike. At station 1014 I was unable to rent either the bike there or the one I had just returned, so I was forced to walk to station 1012. I threw in the towel at station 1001 after failing to rent a bike there and took a bus home. The attempt took me 2 hours and 45 minutes.
+![First Attempt](/results/attempt1.png)
+
 ## Next Steps
-All that remains is to perform this tour and track it via GPS.
+I may attempt this tour again on my own bike, without any rentals involved.
