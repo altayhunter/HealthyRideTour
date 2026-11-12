@@ -37,5 +37,22 @@ Total travel time is 3 hours 5 minutes 29 seconds, traversing counterclockwise a
 I attempted this tour on 2017-06-17 with the intent of renting a bike at each station and riding it to the next station. Unfortunately on six occasions the app told me the bike was rented, but the bike refused to unlock. This required me to call the service line to have them invalidate the rental and have me rent a different bike. At station 1014 I was unable to rent either the bike there or the one I had just returned, so I was forced to walk to station 1012. I threw in the towel at station 1001 after failing to rent a bike there and took a bus home. The attempt took me 2 hours and 45 minutes.
 ![First Attempt](/results/attempt1.png)
 
-## Next Steps
-I may attempt this tour again on my own bike, without any rentals involved.
+## Proof of Optimality
+Contrary to my prior understanding, it's actually quite possible to find the optimal solution despite the fact that Traveling Salesman is an NP-complete problem. It turns out that if we relax the constraints of what constitutes a valid tour, we can set up a system of linear equations by assigning a variable to each edge and solve them using the [simplex algorithm](https://wikipedia.org/wiki/Simplex_algorithm).
+
+The [DFJ formulation](https://wikipedia.org/wiki/Travelling_salesman_problem#Dantzig%E2%80%93Fulkerson%E2%80%93Johnson_formulation) has us start by restricting that the total number of edges entering each node must sum to 1, and the total number of edges leaving each node must also sum to 1. These correspond to a relaxed version of the actual problem, since it allows for disjointed subtours to form. Nonetheless, it gives us a strict lower bound on the optimal tour length. This means that if it produces a single contiguous tour, we can be certain that this is the global optimum.
+
+Each time we encounter a disjointed subtour we can safely eliminate it by forcing the sum of all outbound edges from that subtour to sum to at least 1. Adding these subtour elimination constraints allows us to gradually coerce the result into a valid tour while maintaining our lower bound.
+
+The first iteration of DFJ with just the base constraints gives us the following 22 disjointed subtours:
+![Iteration 1](/results/iteration1.png)
+The second iteration breaks up these subtours into 16 different disjointed subtours:
+![Iteration 2](/results/iteration2.png)
+The third iteration further breaks them into just 3 different disjointed subtours:
+![Iteration 3](/results/iteration3.png)
+The fourth iteration breaks those into 2 disjointed subtours:
+![Iteration 4](/results/iteration4.png)
+And the fifth iteration produces the optimal tour:
+![Iteration 5](/results/iteration5.png)
+
+It turns out that the result found using simulated annealing was the optimum tour after all.

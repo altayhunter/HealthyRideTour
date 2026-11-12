@@ -1,0 +1,11 @@
+[package]
+name = "DFJ"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.104"
+contracts = "0.6.11"
+csv = "1.4.0"
+good_lp = { version = "1.15.3", features = ["highs"], default-features = false }
+serde = { version = "1.0.229", features = ["derive"] }
